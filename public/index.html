@@ -9,6 +9,7 @@
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/nav.css" type="text/css">
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +26,11 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <span class="logo white">tweeter</span>
+      <div id="add-tweet">
+        <a href="#" class="white"><span class="bold">Write</span> a new tweet</a>
+        <i class="fa-solid fa-angles-down red"></i>
+      </div>
     </nav>
 
     <!-- Page-specific (main) content here -->
