@@ -14,6 +14,10 @@
     color: #c40101;
 }
 
+.pale {
+    color: #C9ADA1;
+}
+
 #add-tweet a {
     text-decoration: none;
 }
@@ -25,6 +29,7 @@
 nav {
     width: 100%;
     height: 120px;
+    position: fixed;
     background-color: #4056A1;
     display: flex;
     justify-content: space-between;
