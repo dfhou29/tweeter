@@ -1,9 +1,7 @@
-.red {
-  color: #c40101;
-}
 
 .new-tweet {
   padding: 1em 0;
+  margin-bottom: 1em;
 }
 
 .tweet-form {
@@ -23,7 +21,7 @@
   background-color: transparent;
   resize: none;
   outline: none;
-  border-bottom: 2px solid #545149;
+  border-bottom: 4px solid #726b64;
   height: 6rem;
 }
 
