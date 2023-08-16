@@ -1,58 +1,63 @@
-.new-tweet {
-    padding: 1em 0;
+.red {
+  color: #c40101;
 }
+
+.new-tweet {
+  padding: 1em 0;
+}
+
 .tweet-form {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .new-tweet label {
-    font-size: 1.5rem;
-    font-weight: 600;
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 /* textarea for new tweet */
 #tweet-text {
-    border: none;
-    background-color: transparent;
-    resize: none;
-    outline: none;
-    border-bottom: 2px solid #545149;
-    height: 6rem;
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  border-bottom: 2px solid #545149;
+  height: 6rem;
 }
 
 /* button and counter*/
 .send-tweet {
-    padding-top: 1rem;
-    display: flex;
-    justify-content: space-between;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* button style */
 .submit-button {
-    font-family: 'Bungee', sans-serif;
-    font-size: 1rem;
-    color: white;
-    background-color: #4056A1;
-    padding: 6px 10px;
-    border: none;
-    transition: box-shadow 0.15s;
+  font-family: 'Bungee', sans-serif;
+  font-size: 1rem;
+  color: white;
+  background-color: #4056A1;
+  padding: 6px 10px;
+  border: none;
+  transition: box-shadow 0.15s;
 }
 
 .submit-button:hover {
-    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 .submit-button:active {
-    margin-top: 2px;
-    margin-left: 2px;
-    box-shadow: none;
+  margin-top: 2px;
+  margin-left: 2px;
+  box-shadow: none;
 }
 
 /* counter style */
 .counter {
-    align-self: center;
-    font-family: 'Bungee', sans-serif;
-    font-size: 1.25rem;
+  align-self: center;
+  font-family: 'Bungee', sans-serif;
+  font-size: 1.25rem;
 }
