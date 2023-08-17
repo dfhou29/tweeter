@@ -60,12 +60,30 @@ $(document).ready( () => {
     event.preventDefault();
     const $form = $(this);
     const $data = $('form').serialize();
+    const $errorMessage = $form.find('.error-message');
+    const $emptyError = $form.find('.empty-error');
+    const $exceedError = $form.find('.exceed-error');
+
 
     const tweetText = $data.substring(5);
     if (!tweetText) {
-      alert("Empty content! Please try again.");
+      $errorMessage.slideDown({
+        duration: 200,
+        start: () => {
+          $errorMessage.css('display', 'flex');
+          $emptyError.css('display', 'block');
+        }
+      });
+
+
     } else if (tweetText.length > 140) {
-      alert("Content exceeds maximum length: 140. Please try again.");
+      $errorMessage.slideDown({
+        duration: 200,
+        start: () => {
+          $errorMessage.css('display', 'flex');
+          $exceedError.css('display', 'block');
+        }
+      });
     } else {
       $.ajax({
         type: 'POST',
@@ -73,6 +91,9 @@ $(document).ready( () => {
         data: $data,
         success: () => {
           $form.children('textarea').val('');
+          $errorMessage.css('display', 'none');
+          $emptyError.css('display', 'none');
+          $exceedError.css('display', 'none');
           loadTweets();
         }
       })

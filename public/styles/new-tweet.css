@@ -53,6 +53,26 @@
   box-shadow: none;
 }
 
+/* error massage */
+.error-message {
+  display: none;
+  border: 3px solid #c40101;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: .75em;
+  color: #c40101;
+  padding: 4px 4px;
+  margin-top: 16px;
+}
+
+.empty-error {
+  display: none;
+}
+
+.exceed-error {
+  display: none;
+}
+
 /* counter style */
 .counter {
   align-self: center;
