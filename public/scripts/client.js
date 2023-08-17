@@ -4,17 +4,24 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// escape HTML character to prevent cross-site scripting
+const escape = function(str) {
+  const div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 const createTweetElement = function(tweet) {
   const $tweet = `
   <article class="tweet">
     <header>
       <img src=${tweet.user.avatars} alt="profile picture" class="sm-user-image">
-        <h3 class="user-name">${tweet.user.name}</h3>
-        <h3 class="user-handle">${tweet.user.handle}</h3>
+        <h3 class="user-name">${escape(tweet.user.name)}</h3>
+        <h3 class="user-handle">${escape(tweet.user.handle)}</h3>
     </header>
-    <p class="tweet-text">${tweet.content.text}</p>
+    <p class="tweet-text">${escape(tweet.content.text)}</p>
     <footer>
-      <p>${timeago.format(tweet.created_at)}</p>
+      <p>${escape(timeago.format(tweet.created_at))}</p>
       <div class="action-icons">
         <i class="fa-solid fa-flag"></i>
         <i class="fa-solid fa-retweet"></i>
@@ -51,6 +58,7 @@ $(document).ready( () => {
 
   $('form').on('submit', function(event)  {
     event.preventDefault();
+    const $form = $(this);
     const $data = $('form').serialize();
 
     const tweetText = $data.substring(5);
@@ -64,7 +72,7 @@ $(document).ready( () => {
         url: '/tweets/',
         data: $data,
         success: () => {
-          console.log($data);
+          $form.children('textarea').val('');
           loadTweets();
         }
       })
