@@ -46,6 +46,7 @@ header .sm-user-image {
   font-weight: 600;
   padding: 2em .5em;
   border-bottom: 4px solid #726b64;
+  overflow-wrap: break-word;
 }
 
 .tweet footer {
