@@ -5,6 +5,9 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
+// function declaration
+
 // escape HTML character to prevent cross-site scripting
 const escape = function(str) {
   const div = document.createElement('div');
@@ -36,14 +39,17 @@ const createTweetElement = function(tweet) {
 };
 
 const renderTweets = function(tweets) {
+
   $('.tweets-container').empty();
-  for (const tweet of tweets) {
-    const $tweet = createTweetElement(tweet);
+  for (let x = tweets.length - 1; x >= 0; x--) {
+    const $tweet = createTweetElement(tweets[x]);
     $('.tweets-container').append($tweet);
   }
+
 };
 
 const loadTweets = function() {
+
   $.ajax({
     type: 'GET',
     url:'/tweets/',
@@ -51,17 +57,25 @@ const loadTweets = function() {
       renderTweets(data);
     }
   });
+
 };
+
+
+
+// function execution
 
 loadTweets();
 
 $(document).ready(() => {
+
   // nav add tweet button
   const $addTweetButton = $('.add-tweet-button');
   const $newTweet = $(".new-tweet");
 
+  // toggle form and change button text accordingly
   $addTweetButton.on('click', function(event) {
     event.preventDefault();
+
     $newTweet.slideToggle({
       duration: 200,
       start: () => {
@@ -77,7 +91,10 @@ $(document).ready(() => {
   // nav bar scrolling
   const $navbar = $('nav');
   const $goTopButton = $('.go-top-button');
+
   $(document).on('scroll', function() {
+
+    // if document y offset > 30, fade out navbar and show go-top button
     if ($(document).scrollTop() > 30) {
       $navbar.fadeOut();
       $goTopButton.css('display', 'block');
@@ -85,20 +102,24 @@ $(document).ready(() => {
       $navbar.fadeIn();
       $goTopButton.css('display', 'none');
     }
+
   });
 
-  // go top button
+  // go top button, scroll to top when clicked
   const $circle = $('.circle');
   $circle.on('click', function() {
+
     $('html, body').animate({
       scrollTop: 0
     }, 400);
     $addTweetButton.text("View Tweets");
     $newTweet.css('display', 'block');
+
   });
 
   // tweet submission
   $('form').on('submit', function(event)  {
+
     event.preventDefault();
     const $form = $(this);
     const $data = $('form').serialize();
