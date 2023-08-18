@@ -1,82 +1,87 @@
+@import "colors";
+@import "mixins";
 
 .new-tweet {
-  display: block;
+  display: none;
   padding: 1em 0;
-  margin-bottom: 1em;
-}
 
-.tweet-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
+  .tweet-form {
+    @include flexbox($direction: column, $justify: space-around, $align: stretch);
 
-.new-tweet label {
-  font-size: 1.5rem;
-  font-weight: 600;
-}
+    #tweet-text {
+      border: none;
+      background-color: transparent;
+      resize: none;
+      outline: none;
+      border-bottom: 4px solid $border-color;
+      height: 6rem;
+    }
 
-/* textarea for new tweet */
-#tweet-text {
-  border: none;
-  background-color: transparent;
-  resize: none;
-  outline: none;
-  border-bottom: 4px solid #726b64;
-  height: 6rem;
+    label {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+  }
 }
 
 /* button and counter*/
 .send-tweet {
-  padding-top: 1rem;
-  display: flex;
-  justify-content: space-between;
-}
+  padding: 1rem 0;
+  height: 40px;
+  @include flexbox($justify: space-between);
 
-/* button style */
-.submit-button {
-  font-family: 'Bungee', sans-serif;
-  font-size: 1rem;
-  color: white;
-  background-color: #4056A1;
-  padding: 6px 10px;
-  border: none;
-  transition: box-shadow 0.15s;
-}
+  /* button style */
+  .submit-button {
+    font-family: 'Bungee', sans-serif;
+    font-size: 1rem;
+    color: $button-text-color;
+    background-color: $nav-background-color;
+    padding: 6px 10px;
+    border: none;
+    transition: box-shadow 0.15s;
 
-.submit-button:hover {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
-}
+      &:hover {
+        box-shadow: 2px 2px 2px $hover-shadow-color;
+      }
 
-.submit-button:active {
-  margin-top: 2px;
-  margin-left: 2px;
-  box-shadow: none;
+      &:active {
+        margin-top: 2px;
+        margin-left: 2px;
+        box-shadow: none;
+        background-color: $action-hover-color;
+        color: $nav-background-color;
+      }
+  }
+
+  /* counter style */
+  .counter {
+    align-self: center;
+    font-family: 'Bungee', sans-serif;
+    font-size: 1.25rem;
+  }
 }
 
 /* error massage */
 .error-message {
   display: none;
-  border: 3px solid #c40101;
+  border: 3px solid $error-message-color;
   justify-content: flex-start;
   align-items: center;
   font-size: .75em;
-  color: #c40101;
+  color: $error-message-color;
   padding: 4px 4px;
   margin-top: 16px;
+
+  .empty-error {
+    display: none;
+  }
+
+  .exceed-error {
+    display: none;
+  }
 }
 
-.empty-error {
-  display: none;
-}
 
-.exceed-error {
-  display: none;
-}
 
-/* counter style */
-.counter {
-  align-self: center;
-  font-family: 'Bungee', sans-serif;
-  font-size: 1.25rem;
-}
+
+

@@ -1,15 +1,4 @@
-/* Logo */
-.logo {
-  font-family: "Bungee", sans-serif;
-  padding-left: 1.5em;
-}
-
-/* Nav */
-#add-tweet a {
-  text-decoration: none;
-}
-
-#add-tweet .bold {
+.bold {
   font-weight: 600;
 }
 
@@ -19,18 +8,38 @@ nav {
   position: fixed;
   background-color: #4056A1;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  /* Logo */
 }
-
-#add-tweet {
+nav .logo {
+  font-family: "Bungee", sans-serif;
+  padding-left: 1.5em;
+}
+nav .add-tweet {
   padding-right: 1.5em;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-
-.fa-angles-down {
-  animation: 2s linear 0.25s infinite alternate both running bounce;
+nav .add-tweet .add-tweet-button {
+  font-family: "Bungee", sans-serif;
+  font-size: 1.25rem;
+  color: #FFFFFF;
+  text-decoration: none;
+  background-color: #c5a343;
+  padding: 6px 10px;
+  border: 1px solid #726b64;
+  transition: box-shadow 0.15s;
+}
+nav .add-tweet .add-tweet-button:hover {
+  box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.4);
+}
+nav .add-tweet .add-tweet-button:active {
+  margin-top: 2px;
+  margin-left: 2px;
+  box-shadow: none;
+  color: #4056A1;
 }

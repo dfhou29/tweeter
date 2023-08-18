@@ -1,18 +1,16 @@
+@import "colors";
+@import "mixins";
+
 .user-profile {
   padding-top: 120px;
   margin-bottom: 1em;
   width: 100%;
   height: 450px;
-  background-color: #eae0cc;
+  background-color: $user-profile-background-color;
   background-image: url("https://www.transparenttextures.com/patterns/mirrored-squares.png");
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flexbox($direction: column);
 }
 
 .profile-pic {
-  width: 200px;
-  object-fit: contain;
-  object-position: center;
+  @include profile-pic;
 }

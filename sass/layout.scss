@@ -3,6 +3,8 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
+@import "colors";
 html {
   box-sizing: border-box;
 }
@@ -16,15 +18,15 @@ html {
  */
 
 .white {
-  color: #FFFFFF;
+  color: $logo-color;
 }
 
 .red {
-  color: #c40101;
+  color: $error-message-color;
 }
 
 .pale {
-  color: #C9ADA1;
+  color: $arrow-color;
 }
 
 p {
@@ -43,8 +45,8 @@ h3 {
 }
 
 body {
-  color: #545149;
-  background-color: #f4f1ec;
+  color: $body-text-color;
+  background-color: $body-background-color;
   font-family: 'Source Sans 3', sans-serif;
   font-size: 24px;
 }
@@ -52,10 +54,6 @@ body {
 main {
   width: 90%;
   margin: 0 5%;
-}
-
-section {
-  margin-bottom: 1em;
 }
 
 .fa-solid {

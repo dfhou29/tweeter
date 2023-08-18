@@ -14,7 +14,6 @@ html {
 /*
  * Global layout stuff
  */
-
 .white {
   color: #FFFFFF;
 }
@@ -45,7 +44,7 @@ h3 {
 body {
   color: #545149;
   background-color: #f4f1ec;
-  font-family: 'Source Sans 3', sans-serif;
+  font-family: "Source Sans 3", sans-serif;
   font-size: 24px;
 }
 
@@ -54,18 +53,14 @@ main {
   margin: 0 5%;
 }
 
-section {
-  margin-bottom: 1em;
-}
-
 .fa-solid {
   margin: 0 4px;
   cursor: pointer;
 }
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
-
 @media (min-width: 1024px) {
   .content {
     padding-top: 120px;
@@ -75,19 +70,16 @@ section {
     justify-content: space-around;
     align-items: flex-start;
   }
-
   .user-profile {
     padding-top: 0;
     width: 30%;
     height: 300px;
   }
-
   .profile-pic {
     width: 100px;
     object-fit: contain;
     object-position: center;
   }
-
   main {
     margin: 0;
     width: 50%;

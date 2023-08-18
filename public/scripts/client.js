@@ -1,3 +1,4 @@
+/* eslint-env jquery */
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
@@ -9,7 +10,7 @@ const escape = function(str) {
   const div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
 const createTweetElement = function(tweet) {
   const $tweet = `
@@ -49,13 +50,31 @@ const loadTweets = function() {
     success: function(data) {
       renderTweets(data);
     }
-  })
+  });
 };
 
 loadTweets();
 
-$(document).ready( () => {
+$(document).ready(() => {
+  //nav add tweet button
+  const $addTweetButton = $('.add-tweet-button');
 
+  $addTweetButton.on('click', function(event) {
+    event.preventDefault();
+    const $newTweet = $(".new-tweet");
+    $newTweet.slideToggle({
+      duration: 200,
+      start: () => {
+        if ($addTweetButton.text() === "New Tweet") {
+          $addTweetButton.text("View Tweets");
+        } else {
+          $addTweetButton.text("New Tweet");
+        }
+      }
+    });
+  });
+
+  // tweet submission
   $('form').on('submit', function(event)  {
     event.preventDefault();
     const $form = $(this);
@@ -72,6 +91,7 @@ $(document).ready( () => {
         start: () => {
           $errorMessage.css('display', 'flex');
           $emptyError.css('display', 'block');
+          $exceedError.css('display', 'none');
         }
       });
 
@@ -82,6 +102,7 @@ $(document).ready( () => {
         start: () => {
           $errorMessage.css('display', 'flex');
           $exceedError.css('display', 'block');
+          $emptyError.css('display', 'none');
         }
       });
 
@@ -97,8 +118,8 @@ $(document).ready( () => {
           $exceedError.css('display', 'none');
           loadTweets();
         }
-      })
+      });
     }
-  })
+  });
 });
 
