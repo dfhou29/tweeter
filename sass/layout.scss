@@ -1,0 +1,95 @@
+/*
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * https://css-tricks.com/international-box-sizing-awareness-day/
+ * Do not modify these two selectors, please
+ */
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/*
+ * Global layout stuff
+ */
+
+.white {
+  color: #FFFFFF;
+}
+
+.red {
+  color: #c40101;
+}
+
+.pale {
+  color: #C9ADA1;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+h2 {
+  padding: 0;
+  margin: 0;
+}
+
+h3 {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  color: #545149;
+  background-color: #f4f1ec;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 24px;
+}
+
+main {
+  width: 90%;
+  margin: 0 5%;
+}
+
+section {
+  margin-bottom: 1em;
+}
+
+.fa-solid {
+  margin: 0 4px;
+  cursor: pointer;
+}
+/*
+ * Additional CSS can be defined below or in other CSS files, as per instructions
+ */
+
+@media (min-width: 1024px) {
+  .content {
+    padding-top: 120px;
+    margin: 0 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+  }
+
+  .user-profile {
+    padding-top: 0;
+    width: 30%;
+    height: 300px;
+  }
+
+  .profile-pic {
+    width: 100px;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  main {
+    margin: 0;
+    width: 50%;
+  }
+}

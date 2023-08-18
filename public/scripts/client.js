@@ -84,6 +84,7 @@ $(document).ready( () => {
           $exceedError.css('display', 'block');
         }
       });
+
     } else {
       $.ajax({
         type: 'POST',
