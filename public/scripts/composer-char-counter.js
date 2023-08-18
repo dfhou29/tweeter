@@ -1,3 +1,4 @@
+/* eslint-env jquery */
 $(document).ready(() => {
   $('#tweet-text').on('input', function() {
     // get input length and subtract it from char limit

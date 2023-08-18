@@ -1,0 +1,44 @@
+@import 'colors';
+@import "mixins";
+
+.go-top-button {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  bottom: 1.5em;
+  right: 1.5em;
+
+  .circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    position: relative;
+    top: 30px;
+    left: 30px;
+    background-color: $go-top-button-color;
+    transition: background-color 0.15s;
+    &:hover {
+      background-color: $go-top-button-color-hover;
+      .arrow {
+        border-bottom: 25px solid $nav-background-color;
+      }
+    }
+
+    .arrow {
+      position: relative;
+      top: 16px;
+      left: 15px;
+      width: 0;
+      height: 0;
+      border-radius: 2px;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-bottom: 25px solid $logo-color;
+    }
+  }
+
+
+}
+

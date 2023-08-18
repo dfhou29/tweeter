@@ -5,6 +5,7 @@
  */
 
 @import "colors";
+@import "mixins";
 html {
   box-sizing: border-box;
 }
@@ -49,6 +50,7 @@ body {
   background-color: $body-background-color;
   font-family: 'Source Sans 3', sans-serif;
   font-size: 24px;
+  padding-bottom: 1em;
 }
 
 main {
@@ -68,10 +70,7 @@ main {
   .content {
     padding-top: 120px;
     margin: 0 5%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: flex-start;
+    @include flexbox($justify: space-around, $align: flex-start);
   }
 
   .user-profile {
@@ -81,9 +80,7 @@ main {
   }
 
   .profile-pic {
-    width: 100px;
-    object-fit: contain;
-    object-position: center;
+    @include profile-pic($size: 100px, $fit: contain, $position: center);
   }
 
   main {

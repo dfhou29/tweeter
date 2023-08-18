@@ -1,0 +1,36 @@
+.go-top-button {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  width: 100px;
+  height: 100px;
+  bottom: 1.5em;
+  right: 1.5em;
+}
+.go-top-button .circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  position: relative;
+  top: 30px;
+  left: 30px;
+  background-color: rgba(197, 163, 67, 0.6);
+  transition: background-color 0.15s;
+}
+.go-top-button .circle:hover {
+  background-color: rgba(197, 163, 67, 0.9);
+}
+.go-top-button .circle:hover .arrow {
+  border-bottom: 25px solid #4056A1;
+}
+.go-top-button .circle .arrow {
+  position: relative;
+  top: 16px;
+  left: 15px;
+  width: 0;
+  height: 0;
+  border-radius: 2px;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 25px solid #FFFFFF;
+}

@@ -56,12 +56,12 @@ const loadTweets = function() {
 loadTweets();
 
 $(document).ready(() => {
-  //nav add tweet button
+  // nav add tweet button
   const $addTweetButton = $('.add-tweet-button');
+  const $newTweet = $(".new-tweet");
 
   $addTweetButton.on('click', function(event) {
     event.preventDefault();
-    const $newTweet = $(".new-tweet");
     $newTweet.slideToggle({
       duration: 200,
       start: () => {
@@ -72,6 +72,29 @@ $(document).ready(() => {
         }
       }
     });
+  });
+
+  // nav bar scrolling
+  const $navbar = $('nav');
+  const $goTopButton = $('.go-top-button');
+  $(document).on('scroll', function() {
+    if ($(document).scrollTop() > 30) {
+      $navbar.fadeOut();
+      $goTopButton.css('display', 'block');
+    } else {
+      $navbar.fadeIn();
+      $goTopButton.css('display', 'none');
+    }
+  });
+
+  // go top button
+  const $circle = $('.circle');
+  $circle.on('click', function() {
+    $('html, body').animate({
+      scrollTop: 0
+    }, 400);
+    $addTweetButton.text("View Tweets");
+    $newTweet.css('display', 'block');
   });
 
   // tweet submission
